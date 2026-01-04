@@ -1,6 +1,6 @@
 ﻿# MWGA - Make WinForms Great Again !!
 
-<img src="https://github.com/dcsoft-yyf/WinForm2WASM/blob/main/MWGA.png?raw=true"/>
+<img src="https://github.com/dcsoft-yyf/MWGA/blob/main/MWGA.jpg?raw=true"/>
 
 ## Update Log | 更新日志
 -  2026-1-4 :Frist blood [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
