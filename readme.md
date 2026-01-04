@@ -3,7 +3,7 @@
 <img src="https://github.com/dcsoft-yyf/WinForm2WASM/blob/main/MWGA.png?raw=true"/>
 
 ## Update Log | 更新日志
--  2026-1-4 :Frist blood [https://dcsoft-yyf.github.io/WinForm2WASM/WinFormCalculator.html](https://dcsoft-yyf.github.io/WinForm2WASM/WinFormCalculator.html)
+-  2026-1-4 :Frist blood [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
 ## Current Status of Global WinForms Modernization | 全球 WinForms 现代化现状
 
 Globally, it is estimated that there are about 3 to 5 million WinForms developers, accounting for 40% to 50% of the total number of .NET developers. There are 10 to 15 million WinForms applications running in production environments. Among these applications, 60% to 80% have modernization transformation needs, and 40% to 60% of them prioritize web-based migration, involving possibly `hundreds of billions of lines` of C# code. The core driving factors include web-side access, interface modernization, cross-platform support, cloud integration, and security compliance. Due to the reusability of C# code and browser-based cross-platform capabilities, Blazor WebAssembly has become a popular choice.
