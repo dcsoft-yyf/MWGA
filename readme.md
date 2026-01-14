@@ -31,7 +31,7 @@ Our long-term goal is to revitalize `100 billion lines` of market-proven C# code
 
 我们的长期目标是能将全球`1000亿`行经过市场验证的C#代码能重获新生，在现代Web前端平台上继续发挥价值。
 
-## MWGA支持的关键API | Key API for MWGA
+## 目前MWGA已经支持的关键API | The key APIs currently supported by MWGA 
 - System.Drawing.Bitmap
 - System.Drawing.Brush
 - System.Drawing.Font
