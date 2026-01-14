@@ -5,10 +5,11 @@
 ## Update Log | 更新日志
 - 2026-1-16 :Support GDI+ API.[https://dcsoft-yyf.github.io/MWGA/index.html](https://dcsoft-yyf.github.io/MWGA/index.html)
   - Minisweeper Game Demo use GDI+ API. 
-  - The same set of C# code using `System.Drawing` can be compiled into `.exe` and `.wasm` without modification. The operation effect is exactly the same. 
+  - The same set of C# code using `System.Drawing` can be compiled into `.exe` and `.wasm` without modification. The operation effect is exactly the same.
+  <br/> 一套使用了`System.Drawing`的C#代码无需修改即可编译成`.exe`和`.wasm`文件。两者运行效果完全一样。 
   - <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/images/minesweeper.png?raw=true"/>
 - 2026-1-4 :Frist blood [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
-  - Calculator Demo use TextBox and Button controls
+  - Calculator Demo use TextBox and Button controls,Show the ability Form.Resize event.
   - <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/images/calculator.png?raw=true"/>
 
 ## Current Status of Global WinForms Modernization | 全球 WinForms 现代化现状
@@ -61,7 +62,11 @@ Our long-term goal is to revitalize `100 billion lines` of market-proven C# code
 - System.Windows.Forms.Screen
 - System.Windows.Forms.TextBox
 - System.Windows.Forms.Timer
-
+- Platform
+  - Development : Blazor Webassembly 9.0
+  - Browser : Chrome, Firefox and other mainstream browsers
+  - OS : Windows , Linux, Andriod
+ 
 ## Estimated Market Size of Global WinForms Applications Pending Migration (USD) | 全球待迁移 WinForms 应用市场规模估算（美元）
 
 Assuming there are approximately 500,000 – 2,000,000 WinForms applications to be migrated; the distribution of application complexity: 60% simple, 30% medium, 10% complex.
