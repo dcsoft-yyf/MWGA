@@ -1,0 +1,200 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.BlazorWebAssembly">
+
+  <PropertyGroup>
+    <TargetFramework>net9.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <PublishTrimmed>true</PublishTrimmed>
+    <AssemblyName>DCSoft.MWGA.Demo</AssemblyName>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>$(DefineConstants);MWGA</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>$(DefineConstants);MWGA</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="published\**" />
+    <Compile Remove="WinForms\bin\**" />
+    <Compile Remove="WinForms\obj\**" />
+    <Compile Remove="WinForms\Properties\**" />
+    <Compile Remove="net90\**" />
+    <Content Remove="published\**" />
+    <Content Remove="WinForms\bin\**" />
+    <Content Remove="WinForms\obj\**" />
+    <Content Remove="WinForms\Properties\**" />
+    <Content Remove="net90\**" />
+    <EmbeddedResource Remove="published\**" />
+    <EmbeddedResource Remove="WinForms\bin\**" />
+    <EmbeddedResource Remove="WinForms\obj\**" />
+    <EmbeddedResource Remove="WinForms\Properties\**" />
+    <EmbeddedResource Remove="net90\**" />
+    <None Remove="published\**" />
+    <None Remove="WinForms\bin\**" />
+    <None Remove="WinForms\obj\**" />
+    <None Remove="WinForms\Properties\**" />
+    <None Remove="net90\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="WinForms\Mine\AssemblyInfo.cs" />
+    <Compile Remove="WinForms\Program.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Remove="wwwroot\DCResourceStrings-en.js" />
+    <Content Remove="wwwroot\DCResourceStrings-zh-cn.js" />
+    <Content Remove="wwwroot\Minesweeper.html" />
+    <Content Remove="wwwroot\WinFormCalculator - 复制.html.br" />
+    <Content Remove="wwwroot\WinFormCalculator - 复制.html.gz" />
+    <Content Remove="wwwroot\WinFormCalculator.html" />
+    <Content Remove="wwwroot\WinFormCalculator.html.br" />
+    <Content Remove="wwwroot\WinFormCalculator.html.gz" />
+    <Content Remove="wwwroot\_framework\DCFontList.js" />
+    <Content Remove="wwwroot\_framework\DCResourceStrings.js" />
+    <Content Remove="wwwroot\_framework\DCWin32API.js" />
+    <Content Remove="wwwroot\_framework\DCWinForm2WASM.js" />
+    <Content Remove="wwwroot\_framework\System.Windows.Forms.Button.js" />
+    <Content Remove="wwwroot\_framework\System.Windows.Forms.DataGridView.js" />
+    <Content Remove="wwwroot\_framework\System.Windows.Forms.Form.js" />
+    <Content Remove="wwwroot\_framework\System.Windows.Forms.Label.js" />
+    <Content Remove="wwwroot\_framework\System.Windows.Forms.MessageBox.js" />
+    <Content Remove="wwwroot\_framework\System.Windows.Forms.TextBox.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="WinForms\Mine\-.png" />
+    <None Remove="WinForms\Mine\0.png" />
+    <None Remove="WinForms\Mine\1.png" />
+    <None Remove="WinForms\Mine\2.png" />
+    <None Remove="WinForms\Mine\3.png" />
+    <None Remove="WinForms\Mine\4.png" />
+    <None Remove="WinForms\Mine\5.png" />
+    <None Remove="WinForms\Mine\6.png" />
+    <None Remove="WinForms\Mine\7.png" />
+    <None Remove="WinForms\Mine\8.png" />
+    <None Remove="WinForms\Mine\9.png" />
+    <None Remove="WinForms\Mine\Face1.png" />
+    <None Remove="WinForms\Mine\Face2.png" />
+    <None Remove="WinForms\Mine\Face3.png" />
+    <None Remove="WinForms\Mine\Face4.png" />
+    <None Remove="WinForms\Mine\Marked.png" />
+    <None Remove="WinForms\Mine\MarkedWrong.png" />
+    <None Remove="WinForms\Mine\NotDiscovery.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="WinForms\Mine\-.png" />
+    <EmbeddedResource Include="WinForms\Mine\0.png" />
+    <EmbeddedResource Include="WinForms\Mine\1.png" />
+    <EmbeddedResource Include="WinForms\Mine\2.png" />
+    <EmbeddedResource Include="WinForms\Mine\3.png" />
+    <EmbeddedResource Include="WinForms\Mine\4.png" />
+    <EmbeddedResource Include="WinForms\Mine\5.png" />
+    <EmbeddedResource Include="WinForms\Mine\6.png" />
+    <EmbeddedResource Include="WinForms\Mine\7.png" />
+    <EmbeddedResource Include="WinForms\Mine\8.png" />
+    <EmbeddedResource Include="WinForms\Mine\9.png" />
+    <EmbeddedResource Include="WinForms\Mine\Face1.png" />
+    <EmbeddedResource Include="WinForms\Mine\Face2.png" />
+    <EmbeddedResource Include="WinForms\Mine\Face3.png" />
+    <EmbeddedResource Include="WinForms\Mine\Face4.png" />
+    <EmbeddedResource Include="WinForms\Mine\Marked.png" />
+    <EmbeddedResource Include="WinForms\Mine\MarkedWrong.png" />
+    <EmbeddedResource Include="WinForms\Mine\NotDiscovery.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\DCResourceStrings-en.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\DCResourceStrings-zh-cn.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\Minesweeper.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\Minesweeper.html.br" />
+    <None Include="wwwroot\Minesweeper.html.gz" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly" Version="9.0.11" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.DevServer" Version="9.0.11" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="9.0.11" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="9.0.11" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.11" />
+    <PackageReference Include="System.Resources.Extensions" Version="9.0.11" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\_framework\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\WinFormCalculator.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="wwwroot\WinFormCalculator.html.br" />
+    <None Include="wwwroot\WinFormCalculator.html.gz" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="DCSoft.MWGA">
+      <HintPath>Lib\DCSoft.MWGA.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\BlazorWASMPackager.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\index.html">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\win10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Drawing.Graphics.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.ComboBox.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.Control.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.MainMenu.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.Menu.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.MenuItem.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.Panel.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.PictureBox.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.TabControl.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\_framework\System.Windows.Forms.TabPage.js">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="readme.md">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>

@@ -2,19 +2,37 @@
 <html>
 <head>
     <meta charset="utf-8" />
-    <title>WinFormCalculator</title>
+    <title>MWGA.Demo</title>
 </head>
 <body>
-    <h1>WinFormCalculator</h1>
-    <div>This is a demo for DCSoft.WinFormWASM.The C# source code is :</div>
-    <br /><a href="Demo.WinFormCalculator/CalculatorForm.cs">Demo.WinFormCalculator/CalculatorForm.cs</a>
-    <br /><a href="Demo.WinFormCalculator/CalculatorForm.Designer.cs">Demo.WinFormCalculator/CalculatorForm.Designer.cs</a>
-    <div dctype="System.Windows.Forms.Screen"
-         style="border:1px solid red ; width:100%;height:500px;font-family:宋体;font-size:12px"
-         EntryPoint="Main4WinFormCalculator">
-        <span>Loading...</span>
+    <h1>Demos for <a href="https://github.com/dcsoft-yyf/MWGA">MWGA</a></h1>
+    <span>This is the first demo for MWGA.Use the following C# source code files without any modified :</span>
+    <br /><a href="https://github.com/dcsoft-yyf/MWGA/blob/main/Demo.WinFormCalculator/CalculatorForm.cs" target="_blank">CalculatorForm.cs</a>|
+    <a href="https://github.com/dcsoft-yyf/MWGA/blob/main/Demo.WinFormCalculator/CalculatorForm.Designer.cs" target="_blank">CalculatorForm.Designer.cs</a>
+    <br />And this blazor wasm application packaged to a single js file by <a href="https://github.com/dcsoft-yyf/BlazorWASMPackager">BlazorWASMPackager</a>.
+    <br />Notice: You need to download a BIG js file more than 7MB size at the first time.Please wait patiently.
+    <div>
+        <button onclick="RunCommand('RunMinesweeper');">Game Minesweeper with some GDI+</button>
+        <button onclick="RunCommand('Main4WinFormCalculator');">Calculator with Button and TextBox</button>
+        <button onclick="RunCommand('TestMessageBox');">MessageBox and MessageBoxNew</button>
+        <button onclick="RunCommand('TestResourceForm');">Load data from Form.resx</button>
+        <button onclick="RunCommand('TestTimer');">Test System.Windows.Forms.Timer</button>
+        <script language="javascript">
+            function RunCommand(strEntryName) {
+                var src = document.querySelector('div[dctype="System.Windows.Forms.Screen"]');
+                if (src != null) {
+                    src.DCRun(strEntryName);
+                }
+            }
+        </script>
     </div>
-    <script src="./_framework/DCResourceStrings-zh.js"></script>
-    <script src="./_framework/blazor.webassembly.js"></script>
+    <div dctype="System.Windows.Forms.Screen"
+         style="border:3px solid black ; width:100%;height:800px;font-family:宋体;font-size:12px;background-image:url(win10.jpg);background-repeat:no-repeat;background-size:100% 100%"
+         EntryPoint="RunMinesweeper">
+        <span style="color:yellow;font-size:20px">Loading...</span>
+    </div>
+    <script src="DCResourceStrings-zh-cn.js"></script>
+    <script2 src="winform2wasm-demo.js"></script2>
+    <script src="_framework/blazor.webassembly.js"></script>
 </body>
 </html>

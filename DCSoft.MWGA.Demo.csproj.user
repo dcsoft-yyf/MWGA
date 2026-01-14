@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <NameOfLastUsedPublishProfile>E:\Source\DCWriter5\trunk\DCSoft.MWGA\demo\Properties\PublishProfiles\FolderProfile.pubxml</NameOfLastUsedPublishProfile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Update="WinForms\CalculatorForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WinForms\dlgMessage.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WinForms\Mine\frmCustomGame.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WinForms\Mine\MineControl.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WinForms\Mine\MineForm.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Update="WinForms\Mine\MinePanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="WinForms\dlgMessage.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Update="WinForms\Mine\MineForm.resx">
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

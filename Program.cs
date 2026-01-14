@@ -2,6 +2,8 @@ global using DCSoft.WinForm2WASM;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
 using Microsoft.JSInterop;
 using Microsoft.Extensions.DependencyInjection;
+using System.ComponentModel;
+using MWGAWinFormDemo;
 
 [assembly: System.Reflection.AssemblyMetadata("IsTrimmable", "false")]
 
@@ -20,7 +22,9 @@ namespace DCSoft.WinForm2WASM
             var jsRuntime = host.Services.GetRequiredService<IJSRuntime>() as JSInProcessRuntime;
 
             
-            DCWasmWinFormEngine.Start(jsRuntime);
+            await DCWasmWinFormEngine.Start(jsRuntime);
+
+            
 
             await host.RunAsync();
 
