@@ -4,7 +4,9 @@
 
 ## Update Log | 更新日志
 -  2026-1-16 :Support GDI+ API.[https://dcsoft-yyf.github.io/MWGA/index.html](https://dcsoft-yyf.github.io/MWGA/index.html)
+- <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/images/minesweeper.png?raw=true"/>
 -  2026-1-4 :Frist blood [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
+- <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/images/calculator.png?raw=true"/>
 
 ## Current Status of Global WinForms Modernization | 全球 WinForms 现代化现状
 
