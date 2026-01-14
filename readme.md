@@ -1,12 +1,15 @@
-﻿# MWGA - Make WinForms Great Again !!
+# MWGA - Make WinForms Great Again !!
 
 <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/MWGA.jpg?raw=true"/>
 
 ## Update Log | 更新日志
--  2026-1-16 :Support GDI+ API.[https://dcsoft-yyf.github.io/MWGA/index.html](https://dcsoft-yyf.github.io/MWGA/index.html)
-- <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/images/minesweeper.png?raw=true"/>
--  2026-1-4 :Frist blood [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
-- <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/images/calculator.png?raw=true"/>
+- 2026-1-16 :Support GDI+ API.[https://dcsoft-yyf.github.io/MWGA/index.html](https://dcsoft-yyf.github.io/MWGA/index.html)
+  - Minisweeper Game Demo use GDI+ API. 
+  - The same set of C# code using `System.Drawing` can be compiled into `.exe` and `.wasm` without modification. The operation effect is exactly the same. 
+  - <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/images/minesweeper.png?raw=true"/>
+- 2026-1-4 :Frist blood [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
+  - Calculator Demo use TextBox and Button controls
+  - <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/images/calculator.png?raw=true"/>
 
 ## Current Status of Global WinForms Modernization | 全球 WinForms 现代化现状
 
@@ -27,6 +30,37 @@ This project is specifically designed to help migrate WinForms applications to t
 Our long-term goal is to revitalize `100 billion lines` of market-proven C# code worldwide, allowing it to continue to deliver value on modern web front-end platforms.
 
 我们的长期目标是能将全球`1000亿`行经过市场验证的C#代码能重获新生，在现代Web前端平台上继续发挥价值。
+
+## MWGA支持的关键API | Key API for MWGA
+- System.Drawing.Bitmap
+- System.Drawing.Brush
+- System.Drawing.Font
+- System.Drawing.Graphics
+  - DrawString( ), DrawImage( ), DrawLine( ), DrawRectangle( ), FillRectangle( ), DrawEllipse( ), FillEllipse(), MeasureString( ), PageUnit, Transform
+- System.Drawing.Pen
+- System.Drawing.SolidBrush
+- System.Drawing.Drawing2D.Martix
+- System.Windows.Forms.Application
+  - AddMessageFilter( ), Run( ), RemoveMessageFilter( )
+- System.Windows.Forms.Button
+- System.Windows.Forms.Control
+  - BackColor, ForeColor, Width, Height, Location, Size, Anchor,Dock, Visible, Enabled,Text,Font, Invalidate( ), Refresh( )
+- System.Windows.Forms.Cursor
+- System.Windows.Forms.Form
+  - ShowDialog( ), Show( ), Close( ), FormBorderStyle, StartPosition, WindowState, Resize
+  - Load data from Form.resx
+  - Support Form.Designer.cs
+- System.Windows.Forms.ImageList
+  - Add( ) , Draw( )
+- System.Windows.Forms.MainMenu
+- System.Windows.Forms.Label
+- System.Windows.Forms.MessageBox
+- System.Windows.Forms.MessageBoxNew
+- System.Windows.Forms.Panel
+- System.Windows.Forms.PictureBox
+- System.Windows.Forms.Screen
+- System.Windows.Forms.TextBox
+- System.Windows.Forms.Timer
 
 ## Estimated Market Size of Global WinForms Applications Pending Migration (USD) | 全球待迁移 WinForms 应用市场规模估算（美元）
 
