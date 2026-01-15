@@ -3,7 +3,7 @@
 <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/MWGA.jpg?raw=true"/>
 
 ## Update Log | 更新日志
-- 2026-1-16 :Support GDI+ API.[https://dcsoft-yyf.github.io/MWGA/index.html](https://dcsoft-yyf.github.io/MWGA/index.html)
+- 2026-1-14 :Support GDI+ API.[https://dcsoft-yyf.github.io/MWGA/index.html](https://dcsoft-yyf.github.io/MWGA/index.html)
   - Minisweeper Game Demo use GDI+ API. 
   - The same set of C# code using `System.Drawing` can be compiled into `.exe` and `.wasm` without modification. The operation effect is exactly the same.
   <br/> 一套使用了`System.Drawing`的C#代码无需修改即可编译成`.exe`和`.wasm`文件。两者运行效果完全一样。 
