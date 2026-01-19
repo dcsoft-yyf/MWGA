@@ -33,11 +33,6 @@ namespace MWGAWinFormDemo
             // 首次加载强制计算布局
             this.Load += (s, e) => UpdateControlLayout();
         }
-
-        protected override void OnMove(EventArgs e)
-        {
-            base.OnMove(e);
-        }
         #region 布局计算核心方法（修正版：填充式布局）
         private void CalculatorForm_Resize(object sender, EventArgs e)
         {

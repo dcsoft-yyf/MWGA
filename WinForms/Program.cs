@@ -26,8 +26,8 @@ namespace MWGAWinFormDemo
             //Main2();return;
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Minesweeper.frmMinesweeper());
-            //Application.Run(new CalculatorForm());
+            //Application.Run(new Minesweeper.frmMinesweeper());
+            Application.Run(new CalculatorForm());
         }
 
         static void Main2()

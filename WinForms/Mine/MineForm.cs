@@ -461,10 +461,12 @@ namespace Minesweeper
 			mines.Clear(30, 16, 99);
 			reset(this, EventArgs.Empty);
 		}
-
-		private
+        /// <summary>
+        /// 显示自定义游戏对话框
+        /// </summary>
+        private
 #if MWGA
-			async
+            async
 #endif
 			void miCustomGame_Click(object sender, System.EventArgs e)
 		{
