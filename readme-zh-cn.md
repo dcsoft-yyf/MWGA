@@ -6,7 +6,7 @@
 ---
 ## 更新日志
 - 2026-1-19 : 更新计算器演示程序 [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
-- 2026-1-19 : 更新扫雷演示程序 [https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
+- 2026-1-19 : 更新扫雷演示程序 [https://dcsoft-yyf.github.io/MWGA](https://dcsoft-yyf.github.io/MWGA)
 
 ## 1. 一句话介绍
 
