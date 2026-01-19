@@ -4,7 +4,9 @@
 **January 15, 2026**
 <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/MWGA.jpg?raw=true"/>
 ---
-
+## Update Log
+- 2026-1-19 : Update demo calculator at [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
+- 2026-1-19 : Update demo Mimesweeper at [https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
 ## 1. One-Sentence Introduction
 
 `MWGA` stands for `Make WinForms Great Again`. It is a tool that quickly migrates WinForm.NET programs using `GDI+` to the `Blazor WASM` platform, keeping code modifications below `10%`, thereby reviving `100 billion` lines of C# code worldwide.
@@ -81,6 +83,7 @@ We created a Blazor WASM 9.0 program, copied the Minesweeper program source file
 Since Blazor WASM uses a browser non-blocking thread mode, we implemented an asynchronous `ShowDialog()` function, using `await` statements to pause current code execution, thus reducing modifications to old code.
 
 Finally, we modified no more than 50 lines (2%) of the old code, allowing the same code to compile into both .exe and .wasm files without modification. The Minesweeper program compiled into .wasm runs in Google Chrome as shown below:
+<br/>[https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
 
 ![Minesweeper Blazor WASM Version](https://github.com/dcsoft-yyf/MWGA/blob/main/images/minesweeper.png?raw=true)
 
@@ -138,6 +141,7 @@ private void UpdateControlLayout()
 ```
 
 This C# code was not modified at all. With MWGA, it runs in Blazor WASM as shown below:
+<br/>[https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
 
 ![Calculator Blazor WASM Version](https://github.com/dcsoft-yyf/MWGA/blob/main/images/calculator.png?raw=true)
 

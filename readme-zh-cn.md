@@ -4,6 +4,9 @@
 **2026-1-15**
 <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/MWGA.jpg?raw=true"/>
 ---
+## 更新日志
+- 2026-1-19 : 更新计算器演示程序 [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
+- 2026-1-19 : 更新扫雷演示程序 [https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
 
 ## 1. 一句话介绍
 
@@ -80,7 +83,7 @@ MWGA和其他相同目标的解决方案的对比如下：
 由于Blazor WASM是采用浏览器非阻断线程模式，为此我们实现了异步`ShowDialog()`函数，采用`await`语句来暂停当前代码执行，这样减少对旧代码的修改量。
 
 最终我们对旧代码修改了不超过50行（占比2%）就让同一套代码可以无需修改即可编译成.exe和.wasm文件。最后编译成.wasm的扫雷程序在谷歌浏览器中的运行结果如下：
-
+<br/>[https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
 ![扫雷游戏Blazor WASM版本](https://github.com/dcsoft-yyf/MWGA/blob/main/images/minesweeper.png?raw=true)
 
 程序中的上千行图形绘制代码未做任何修改，如下图所示：
@@ -137,7 +140,7 @@ private void UpdateControlLayout()
 ```
 
 这份C#代码未做任何修改，借助MWGA，它在Blazor WASM中运行界面如下所示：
-
+<br/> [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
 ![计算器Blazor WASM版本](https://github.com/dcsoft-yyf/MWGA/blob/main/images/calculator.png?raw=true)
 
 ## 7. 基本原理
