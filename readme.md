@@ -1,4 +1,4 @@
-﻿# MWGA - To Revive 100 Billion Lines of C# Code | [简体中文版]()
+﻿# MWGA - To Revive 100 Billion Lines of C# Code | [简体中文版](https://github.com/dcsoft-yyf/MWGA/blob/main/readme-zh-cn.md)
 
 **Nanjing Duchang Information Technology Co., Ltd.**  
 **January 15, 2026**
@@ -7,7 +7,8 @@
 
 ## 1. One-Sentence Introduction
 
-MWGA stands for "Make WinForms Great Again". It is a tool that quickly migrates WinForm.NET programs using GDI+ to the Blazor WASM platform, keeping code modifications below 10%, thereby reviving 100 billion lines of C# code worldwide.
+`MWGA` stands for `Make WinForms Great Again`. It is a tool that quickly migrates WinForm.NET programs using `GDI+` to the `Blazor WASM` platform, keeping code modifications below `10%`, thereby reviving `100 billion` lines of C# code worldwide.
+<br/>`MWGA`是`Make WinForms Great Again`的缩写，它是一个工具软件，能快速地将使用了`GDI+`的WinForm.NET程序快速迁移到`Blazor WASM`平台上，将程序代码修改量控制在`10%`以下，从而复活全球`1000亿`行C#代码。
 
 ## 2. Project Background
 
