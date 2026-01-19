@@ -84,7 +84,7 @@ MWGA和其他相同目标的解决方案的对比如下：
 
 最终我们对旧代码修改了不超过50行（占比2%）就让同一套代码可以无需修改即可编译成.exe和.wasm文件。最后编译成.wasm的扫雷程序在谷歌浏览器中的运行结果如下：
 <br/>[https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
-![扫雷游戏Blazor WASM版本](https://github.com/dcsoft-yyf/MWGA/blob/main/images/minesweeper.png?raw=true)
+<br/>![扫雷游戏Blazor WASM版本](https://github.com/dcsoft-yyf/MWGA/blob/main/images/minesweeper.png?raw=true)
 
 程序中的上千行图形绘制代码未做任何修改，如下图所示：
 
@@ -141,7 +141,7 @@ private void UpdateControlLayout()
 
 这份C#代码未做任何修改，借助MWGA，它在Blazor WASM中运行界面如下所示：
 <br/> [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
-![计算器Blazor WASM版本](https://github.com/dcsoft-yyf/MWGA/blob/main/images/calculator.png?raw=true)
+<br/>![计算器Blazor WASM版本](https://github.com/dcsoft-yyf/MWGA/blob/main/images/calculator.png?raw=true)
 
 ## 7. 基本原理
 
