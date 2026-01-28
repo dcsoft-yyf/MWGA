@@ -1,4 +1,7 @@
 ﻿window.__DCResourceStrings = {
+    NotSupportInMWGA: "Not support in MWGA",
+    WarringForFileOpenDialog: "Due to browser security restrictions, you must manually click here again to open the file selection dialog.",
+    WaittingForShowDialog: "Opening dialog...",
     AboutBoxDesc: "Displays the 'About' box for this component",
     AccDGCollapse: "Collapse",
     AccDGEdit: "Edit",

@@ -5,8 +5,8 @@
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>E:\Source\DCWriter5\trunk\DCSoft.MWGA\demo\published\</_PublishTargetUrl>
-    <History>True|2026-01-14T09:28:37.5097868Z||;True|2026-01-14T17:24:07.4883298+08:00||;True|2026-01-14T17:16:06.2272082+08:00||;True|2026-01-14T17:12:32.2597839+08:00||;True|2026-01-14T16:48:35.7374333+08:00||;</History>
+    <_PublishTargetUrl>E:\Source\DCWriter5\trunk\DCSoft.MWGA\DCSoft.MWGA.Demo\published\</_PublishTargetUrl>
+    <History>True|2026-01-28T10:08:46.3959124Z||;True|2026-01-28T17:52:13.1137480+08:00||;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>

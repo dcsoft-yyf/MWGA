@@ -14,32 +14,39 @@ namespace DCSoft
 {
     public static class MWGASystem
     {
-#if MWGA
-        public static void SetControlOwnerDraw( System.Windows.Forms.Control ctl )
-        {
-            ctl.DCOwnerDrawMode = DCOwnerDrawModeConsts.OwnerDraw;
-        }
-        public static void SetControlOwnerDrawWidthScroll(System.Windows.Forms.ScrollableControl ctl)
-        {
-            ctl.DCOwnerDrawMode = DCOwnerDrawModeConsts.OwnerDrawWithScroll;
-        }
-#else
-        public static void SetControlOwnerDraw( System.Windows.Forms.Control ctl )
-        {
-            // 在真实的Winform.NET环境下，不做任何处理
-        }
-        public static void SetControlOwnerDrawWidthScroll(System.Windows.Forms.ScrollableControl ctl)
-        {
-            // 在真实的Winform.NET环境下，不做任何处理
-        }
-#endif
+//#if MWGA
+//        public static void SetControlOwnerDraw( System.Windows.Forms.Control ctl )
+//        {
+//            ctl.DCOwnerDrawMode = DCOwnerDrawModeConsts.OwnerDraw;
+//        }
+//        public static void SetControlOwnerDrawWidthScroll(System.Windows.Forms.ScrollableControl ctl)
+//        {
+//            ctl.DCOwnerDrawMode = DCOwnerDrawModeConsts.OwnerDrawWithScroll;
+//        }
+//#else
+//        public static void SetControlOwnerDraw( System.Windows.Forms.Control ctl )
+//        {
+//            // 在真实的Winform.NET环境下，不做任何处理
+//        }
+//        public static void SetControlOwnerDrawWidthScroll(System.Windows.Forms.ScrollableControl ctl)
+//        {
+//            // 在真实的Winform.NET环境下，不做任何处理
+//        }
+//#endif
     }
 }
 namespace System.Resources
 {
     internal class ResourceManager : System.ComponentModel.MWGAComponentResourceManager
     {
+        public ResourceManager()
+        {
+
+        }
         public ResourceManager(Type t) : base(t)
+        {
+        }
+        public ResourceManager(string baseName , System.Reflection.Assembly asm ) : base(baseName , asm )
         {
         }
     }
@@ -60,6 +67,12 @@ namespace DCSoft.WinForm2WASM
 {
     public partial class DCWasmWinFormEngine
     {
+        [JSInvokable]
+        public static byte[] GetControlPaintData(int intHandle, int vLeft, int vTop, int vWidth, int vHeight)
+        {
+            return MWGAPublish.GetControlPaintData(intHandle, vLeft, vTop, vWidth, vHeight);
+        }
+
         [JSInvokable]
         public static void MarshalReturnStringValue(string str, int ptr)
         {
@@ -100,6 +113,11 @@ namespace DCSoft.WinForm2WASM
         public static JsonNode DCExecuteControlCommand(int handle, string strCommand, JsonNode args)
         {
             return MWGAPublish.DCExecuteControlCommand(handle, strCommand, args);
+        }
+        [JSInvokable]
+        public static async ValueTask<JsonNode> DCExecuteControlCommandAsync(int handle, string strCommand, JsonNode args)
+        {
+            return await MWGAPublish.DCExecuteControlCommandAsync(handle, strCommand, args);
         }
         //[JSInvokable]
         //public static void AddStandardControlTypeName(string typeName)
@@ -177,9 +195,9 @@ namespace DCSoft.WinForm2WASM
         /// <param name="wParam">参数1</param>
         /// <param name="lParam">参数2</param>
         [JSInvokable]
-        public async static void SendMessageToControl(int handle , int msg, int wParam, int lParam)
+        public static async Task SendMessageToControl(int handle , int msg, int wParam, int lParam,JsonNode objWParam , JsonNode objLParam)
         {
-            MWGAPublish.SendMessageToControl(handle, msg, wParam, lParam); 
+            await MWGAPublish.SendMessageToControl(handle, msg, wParam, lParam , objWParam , objLParam); 
         }
 
         

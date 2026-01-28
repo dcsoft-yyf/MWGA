@@ -12,6 +12,13 @@
     <br />And this blazor wasm application packaged to a single js file by <a href="https://github.com/dcsoft-yyf/BlazorWASMPackager">BlazorWASMPackager</a>.
     <br />Notice: You need to download a BIG js file more than 7MB size at the first time.Please wait patiently.
     <div>
+        <button onclick="RunCommand(this);">Main4WinFormCalculator</button>
+        <button onclick="RunCommand(this);">TestFirstForm</button>
+        <button onclick="RunCommand(this);">TestMessageBox</button>
+        <button onclick="RunCommand(this);">TestResourceForm</button>
+        <button onclick="RunCommand(this);">TestTimer</button>
+        <button onclick="RunCommand(this);">RunMinesweeper</button>
+        <button onclick="RunCommand(this);"></button>
         <script language="javascript">
             function RunCommand(btn) {
                 var strText = btn.innerText;
@@ -24,10 +31,11 @@
     </div>
     <div dctype="System.Windows.Forms.Screen"
          style="border:3px solid black ; width:100%;height:800px;font-family:宋体;font-size:12px;background-image:url(win10.jpg);background-repeat:no-repeat;background-size:100% 100%"
-         EntryPoint="Main4WinFormCalculator">
+         EntryPoint="RunMinesweeper">
         <span style="color:yellow;font-size:20px">Loading...</span>
     </div>
     <script src="DCResourceStrings-zh-cn.js"></script>
-    <script src="mwga.demo.2026.1.14.js"></script>
+    <script2 src="winform2wasm-demo.js"></script2>
+    <script src="_framework/blazor.webassembly.js"></script>
 </body>
 </html>

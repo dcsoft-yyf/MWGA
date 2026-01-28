@@ -38,7 +38,6 @@ namespace MWGAWinFormDemo
         {
             UpdateControlLayout();
         }
-
         /// <summary>
         /// 动态更新所有控件的位置和大小（完全填充窗体，无空白）
         /// </summary>

@@ -18,11 +18,11 @@ namespace Minesweeper
 	{
 		public ResetButton()
 		{
-			MWGASystem.SetControlOwnerDraw(this);
+			//MWGASystem.SetControlOwnerDraw(this);
 
 			InitializeComponent();
-
-			SetStyle(ControlStyles.Selectable, false);
+			SetStyle(ControlStyles.UserPaint, true);
+            SetStyle(ControlStyles.Selectable, false);
 			BackColor = gray;
 			Width = 26;
 			Height = 26;
@@ -175,10 +175,10 @@ namespace Minesweeper
 	{
 		public LEDPanel()
 		{
-			DCSoft.MWGASystem.SetControlOwnerDraw(this);
+			//DCSoft.MWGASystem.SetControlOwnerDraw(this);
 
 			InitializeComponent();
-
+			SetStyle(ControlStyles.UserPaint, true);
 			SetStyle(ControlStyles.Selectable, false);
 			BorderStyle = BorderStyle.Fixed3D;
 			ClientSize = new Size(charWidth * charCount, charHeight);
@@ -301,7 +301,7 @@ namespace Minesweeper
 		/// </summary>
 		public MinePanel()
 		{
-			DCSoft.MWGASystem.SetControlOwnerDraw(this);
+			//DCSoft.MWGASystem.SetControlOwnerDraw(this);
 
 			InitializeComponent();
 
@@ -393,7 +393,7 @@ namespace Minesweeper
 			Bitmap bmp = new Bitmap(img);
 			img.Dispose();
 			img = null;
-			//if (transparent)bmp.MakeTransparent(bmp.GetPixel(1, 1));
+			if (transparent)bmp.MakeTransparent(bmp.GetPixel(1, 1));
 			return bmp;
 		}
 
@@ -520,7 +520,10 @@ namespace Minesweeper
 			}
 			rbReset.Image = getBitmap("Face" + faceID.ToString() + ".png", true);
 		}
-
+        protected override void OnResize(EventArgs eventargs)
+        {
+            base.OnResize(eventargs);
+        }
 		public void ArrangeChildChildren()
 		{
 			var cs = this.ClientSize;

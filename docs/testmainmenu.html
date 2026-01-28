@@ -1,0 +1,316 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>MainMenu Test - Windows 11 Style</title>
+    <style>
+        /* Basic hosting surface */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+        }
+        
+        #dc_app_host { 
+            position: relative; 
+            width: 800px; 
+            height: 600px; 
+            border: 1px solid #ccc; 
+            margin: 20px auto; 
+            background-color: #ffffff;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Top menu bar - Windows 11 style */
+        nav[dctype="System.Windows.Forms.MainMenu"] { 
+            left: 0; 
+            top: 0; 
+            right: 0; 
+            height: 32px; 
+            background: #f9f9f9; 
+            border-bottom: 1px solid #e0e0e0; 
+            display: block; 
+            box-sizing: border-box;
+        }
+        
+        nav[dctype="System.Windows.Forms.MainMenu"] ul#dc_menu_root_ul { 
+            align-items: center; 
+            gap: 0px; 
+            padding: 0 8px; 
+            height: 100%; 
+            margin: 0;
+        }
+        
+        nav[dctype="System.Windows.Forms.MainMenu"] ul#dc_menu_root_ul > li { 
+            padding: 6px 12px; 
+            cursor: pointer; 
+            border-radius: 4px;
+            transition: background-color 0.15s ease;
+            font-size: 14px;
+            color: #202020;
+        }
+        
+        nav[dctype="System.Windows.Forms.MainMenu"] ul#dc_menu_root_ul > li:hover { 
+            background: #e8e8e8;
+        }
+        
+        nav[dctype="System.Windows.Forms.MainMenu"] ul#dc_menu_root_ul > li:active { 
+            background: #d8d8d8;
+        }
+        
+        /* Content area */
+        #content-area {
+            padding: 20px;
+            margin-top: 32px;
+        }
+        
+        h1 {
+            font-size: 24px;
+            color: #202020;
+            margin-bottom: 16px;
+        }
+        
+        .info {
+            background-color: #f0f7ff;
+            border: 1px solid #b8daff;
+            border-radius: 4px;
+            padding: 12px;
+            margin-bottom: 16px;
+            color: #004085;
+        }
+        
+        .info strong {
+            display: block;
+            margin-bottom: 8px;
+        }
+        
+        .info ul {
+            margin: 8px 0 0 20px;
+            padding: 0;
+        }
+        
+        .info li {
+            margin: 4px 0;
+        }
+        
+        .event-log {
+            background-color: #fafafa;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            padding: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+            font-family: 'Consolas', 'Courier New', monospace;
+            font-size: 12px;
+        }
+        
+        .event-log-title {
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 14px;
+        }
+        
+        .event-item {
+            padding: 4px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .event-time {
+            color: #666;
+        }
+        
+        .event-text {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div id="dc_app_host">
+        <div id="content-area">
+            <h1>MainMenu Test - Windows 11 Style</h1>
+            
+            <div class="info">
+                <strong>📋 功能说明：</strong>
+                <ul>
+                    <li><strong>鼠标操作：</strong>点击顶部菜单项打开子菜单，悬停高亮显示</li>
+                    <li><strong>键盘导航：</strong>
+                        <ul>
+                            <li>↑/↓ 键：在菜单项之间移动</li>
+                            <li>→ 键：打开子菜单</li>
+                            <li>← 键：关闭子菜单，返回上一级</li>
+                            <li>Enter 键：执行当前菜单项</li>
+                            <li>Esc 键：关闭当前子菜单</li>
+                        </ul>
+                    </li>
+                    <li><strong>助记符快捷键：</strong>按字母键（如 F 代表 File）快速定位菜单项</li>
+                    <li><strong>多级菜单：</strong>支持无限层级的子菜单嵌套（查看 View → Zoom）</li>
+                </ul>
+            </div>
+            
+            <div class="event-log">
+                <div class="event-log-title">📝 事件日志：</div>
+                <div id="event-list"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="_framework/DCWin32API.js"></script>
+    <script src="_framework/System.Windows.Forms.MainMenu.js"></script>
+    <script src="_framework/System.Windows.Forms.Menu.js"></script>
+    <script src="_framework/System.Windows.Forms.MenuItem.js"></script>
+    <script>
+        (function(){
+            var host = document.getElementById('dc_app_host');
+            var eventList = document.getElementById('event-list');
+            if (!host) return;
+
+            // 日志函数
+            function logEvent(message) {
+                var now = new Date();
+                var timeStr = now.getHours().toString().padStart(2, '0') + ':' + 
+                              now.getMinutes().toString().padStart(2, '0') + ':' + 
+                              now.getSeconds().toString().padStart(2, '0');
+                
+                var eventItem = document.createElement('div');
+                eventItem.className = 'event-item';
+                eventItem.innerHTML = '<span class="event-time">[' + timeStr + ']</span> ' +
+                                     '<span class="event-text">' + message + '</span>';
+                
+                if (eventList) {
+                    eventList.insertBefore(eventItem, eventList.firstChild);
+                    
+                    // 限制日志条目数量
+                    while (eventList.children.length > 50) {
+                        eventList.removeChild(eventList.lastChild);
+                    }
+                }
+            }
+
+            // 设置全局事件处理器
+            if (window.__DCWin32API) {
+                window.__DCWin32API.RaiseControlEvent = function(handle, eventName, eventData) {
+                    var message = '菜单项点击 - Handle: ' + handle + ', Event: ' + eventName;
+                    if (eventData && eventData.SelectedItem) {
+                        message += ', Item: ' + eventData.SelectedItem;
+                    }
+                    logEvent(message);
+                    console.log('Menu Event:', { handle: handle, eventName: eventName, eventData: eventData });
+                };
+            }
+
+            // Create MainMenu control
+            var mainMenuFactory = window.__DCControlTypes && window.__DCControlTypes["System.Windows.Forms.MainMenu"];
+            if (!mainMenuFactory) { 
+                console.error('MainMenu factory not found'); 
+                logEvent('错误: MainMenu factory 未找到');
+                return; 
+            }
+
+            // 创建菜单
+            var menu = mainMenuFactory.Create({ Handle: 1001, Win32API: window.__DCWin32API });
+            menu.style.left = '0px';
+            menu.style.top = '0px';
+            menu.style.width = '100%';
+            menu.style.height = '32px';
+            host.appendChild(menu);
+
+            logEvent('MainMenu 控件已创建');
+
+            // Notepad (Windows 11) main menu structure with dchandle for each item
+            var menuModel = {
+                Handle: 1001,
+                MenuItems: [
+                    { 
+                        Text: '&File', 
+                        MenuItems: [
+                            { Text: '&New', dchandle: 2001, ShortcutKeyDisplayString: 'Ctrl+N', Image: 'images/file-new.svg' },
+                            { Text: '&Open...', dchandle: 2002, ShortcutKeyDisplayString: 'Ctrl+O', Image: 'images/file-open.svg' },
+                            { Text: '&Save', dchandle: 2003, ShortcutKeyDisplayString: 'Ctrl+S', Image: 'images/file-save.svg' },
+                            { Text: 'Save &As...', dchandle: 2004, ShortcutKeyDisplayString: 'Ctrl+Shift+S', Image: 'images/file-saveas.svg' },
+                            { Text: '-' }, // Separator
+                            { Text: 'Page Set&up...', dchandle: 2005, Image: 'images/page-setup.svg' },
+                            { Text: '&Print', dchandle: 2006, ShortcutKeyDisplayString: 'Ctrl+P', Image: 'images/print.svg' },
+                            { Text: '-' }, // Separator
+                            { Text: 'E&xit', dchandle: 2007, ShortcutKeyDisplayString: 'Alt+F4', Image: 'images/exit.svg' }
+                        ]
+                    },
+                    { 
+                        Text: '&Edit', 
+                        MenuItems: [
+                            { Text: '&Undo', dchandle: 3001, ShortcutKeyDisplayString: 'Ctrl+Z', Image: 'images/undo.svg' },
+                            { Text: '&Redo', dchandle: 3002, ShortcutKeyDisplayString: 'Ctrl+Y', Enabled: false, Image: 'images/redo.svg' },
+                            { Text: '-' },
+                            { Text: 'Cu&t', dchandle: 3003, ShortcutKeyDisplayString: 'Ctrl+X', Image: 'images/cut.svg' },
+                            { Text: '&Copy', dchandle: 3004, ShortcutKeyDisplayString: 'Ctrl+C', Image: 'images/copy.svg' },
+                            { Text: '&Paste', dchandle: 3005, ShortcutKeyDisplayString: 'Ctrl+V', Image: 'images/paste.svg' },
+                            { Text: '&Delete', dchandle: 3006, ShortcutKeyDisplayString: 'Del', Image: 'images/delete.svg' },
+                            { Text: '-' },
+                            { Text: 'Select &All', dchandle: 3007, ShortcutKeyDisplayString: 'Ctrl+A', Image: 'images/select-all.svg' },
+                            { Text: 'Time/&Date', dchandle: 3008, ShortcutKeyDisplayString: 'F5', Image: 'images/time-date.svg' },
+                            { Text: '-' },
+                            { Text: 'Find &Next', dchandle: 3009, ShortcutKeyDisplayString: 'F3', Image: 'images/find-next.svg' },
+                            { Text: 'Find Pre&vious', dchandle: 3010, ShortcutKeyDisplayString: 'Shift+F3', Image: 'images/find-previous.svg' }
+                        ]
+                    },
+                    { 
+                        Text: '&View', 
+                        MenuItems: [
+                            { Text: '&Status Bar', dchandle: 4001, Checked: true },
+                            { Text: '-' },
+                            { 
+                                Text: 'Zo&om', 
+                                MenuItems: [
+                                    { Text: 'Zoom &In', dchandle: 4101, ShortcutKeyDisplayString: 'Ctrl++', Image: 'images/zoom-in.svg' },
+                                    { Text: 'Zoom &Out', dchandle: 4102, ShortcutKeyDisplayString: 'Ctrl+-', Image: 'images/zoom-out.svg' },
+                                    { Text: '&Restore Default Zoom', dchandle: 4103, ShortcutKeyDisplayString: 'Ctrl+0', Image: 'images/zoom-reset.svg' }
+                                ]
+                            }
+                        ]
+                    },
+                    { 
+                        Text: 'For&mat', 
+                        MenuItems: [
+                            { Text: '&Word Wrap', dchandle: 5001, Checked: true },
+                            { Text: 'Fo&nt...', dchandle: 5002 }
+                        ]
+                    },
+                    { 
+                        Text: '&Help', 
+                        MenuItems: [
+                            { Text: 'View &Help', dchandle: 6001, ShortcutKeyDisplayString: 'F1', Image: 'images/help.svg' },
+                            { Text: 'Send &Feedback', dchandle: 6002, Image: 'images/feedback.svg' },
+                            { Text: '-' },
+                            { Text: '&About Notepad', dchandle: 6003, Image: 'images/about.svg' }
+                        ]
+                    }
+                ]
+            };
+
+            // 使用新的 ApplyOptions 方法应用菜单模型
+            mainMenuFactory.ApplyOptions(menu, menuModel);
+            
+            logEvent('菜单模型已应用 - ' + menuModel.MenuItems.length + ' 个顶级菜单项');
+            logEvent('提示: 点击菜单项或使用键盘导航（↑↓←→ Enter Esc）');
+
+
+            // 添加一些演示用的快捷键处理
+            document.addEventListener('keydown', function(e) {
+                // 记录快捷键（仅用于演示）
+                if (e.ctrlKey || e.altKey || e.key.startsWith('F')) {
+                    var keyCombo = [];
+                    if (e.ctrlKey) keyCombo.push('Ctrl');
+                    if (e.altKey) keyCombo.push('Alt');
+                    if (e.shiftKey) keyCombo.push('Shift');
+                    keyCombo.push(e.key);
+                    
+                    var keyStr = keyCombo.join('+');
+                    logEvent('快捷键按下: ' + keyStr);
+                }
+            });
+
+        })();
+    </script>
+</body>
+</html>

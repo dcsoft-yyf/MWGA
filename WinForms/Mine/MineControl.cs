@@ -19,9 +19,9 @@ namespace Minesweeper
 		/// </summary>
 		public MineControl()
 		{
-            //***** 这里要额外的附加一行代码，以启用控件自定义绘制功能。**************
-            DCSoft.MWGASystem.SetControlOwnerDraw(this);
-			// ***********************************************************************
+   //         //***** 这里要额外的附加一行代码，以启用控件自定义绘制功能。**************
+   //         DCSoft.MWGASystem.SetControlOwnerDraw(this);
+			//// ***********************************************************************
 
             InitializeComponent();
 			SetStyle(ControlStyles.SupportsTransparentBackColor | ControlStyles.ResizeRedraw | ControlStyles.DoubleBuffer |
@@ -104,8 +104,10 @@ namespace Minesweeper
 			Bitmap bmp = new Bitmap(img);
 			img.Dispose();
 			img = null;
+			//Console.WriteLine(fileName + " " + Convert.ToBase64String(bmp.Data));
 			bmp.MakeTransparent(bmp.GetPixel(1, 1));
-			return bmp;
+            //Console.WriteLine(fileName + "222 " + Convert.ToBase64String(bmp.Data));
+            return bmp;
 		}
 
 		private Mines mines;

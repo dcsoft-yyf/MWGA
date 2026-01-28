@@ -1,4 +1,7 @@
 ﻿window.__DCResourceStrings = {
+    NotSupportInMWGA: "此功能在 MWGA 环境中不受支持。",
+    WarringForFileOpenDialog: "由于受到浏览器安全限制，您必须再次手动点击此处来打开文件选择对话框。", 
+    WaittingForShowDialog: "正在打开对话框，请稍候...",
     AboutBoxDesc: "显示该组件的“关于”对话框",
     AccDGCollapse: "折叠",
     AccDGEdit: "编辑",
