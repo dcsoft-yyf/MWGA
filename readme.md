@@ -4,10 +4,12 @@
 **January 15, 2026**
 <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/MWGA.jpg?raw=true"/>
 ---
+## Online demo
+- [https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
 ## Update Log
 - 2026-1-28 : Upload demo Time line.
-- 2026-1-19 : Update demo calculator at [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
-- 2026-1-19 : Update demo Mimesweeper at [https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
+- 2026-1-19 : Update demo calculator.
+- 2026-1-19 : Update demo Mimesweeper at 
 ## 1. One-Sentence Introduction
 
 `MWGA` stands for `Make WinForms Great Again`. It is a tool that quickly migrates WinForm.NET programs using `GDI+` to the `Blazor WASM` platform, keeping code modifications below `10%`, thereby reviving `100 billion` lines of C# code worldwide.

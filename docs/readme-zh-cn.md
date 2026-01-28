@@ -4,6 +4,8 @@
 **2026-1-15**
 <img src="https://github.com/dcsoft-yyf/MWGA/blob/main/MWGA.jpg?raw=true"/>
 ---
+## 在线演示程序
+- [https://dcsoft-yyf.github.io/MWGAo](https://dcsoft-yyf.github.io/MWGA)
 ## 更新日志
 - 2026-1-28 : 更新时间轴演示程序。
 - 2026-1-19 : 更新计算器演示程序 [https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html](https://dcsoft-yyf.github.io/MWGA/WinFormCalculator.html)
